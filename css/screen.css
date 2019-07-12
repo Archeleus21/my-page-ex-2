@@ -1,0 +1,224 @@
+/* CSS Document for Screens */
+/* fonts from google fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+/*==============================================================
+Global styles
+==============================================================*/
+body
+{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  color: #555; /*gray*/
+  margin: 0;
+  padding: 0;
+}
+#page {
+  /* limit width to same size as banner image */
+  max-width: 1200px;
+  /* center content */
+  margin: 0 auto;
+    /* anything inside this will be position relative to this container */
+  position: relative;
+}
+/*Text styles
+===============================================================*/
+h1 {
+  /* space after h1 */
+  margin-bottom: 1em;
+  font-size: 2.8em;
+  font-weight: 700;
+}
+h2 {
+  /* space after h2 */
+  margin-bottom: .5em;
+  font-size: 1.6em;
+  /* bold */
+  font-weight: 700;
+  /* height of the h2 line */
+  line-height: 1.1em;
+}
+h3 {
+  /* space after h2 */
+  margin-bottom: .5em;
+  font-size: 1.3em;
+  /* bold */
+  font-weight: 700;
+}
+h3 {
+  /* space after h2 */
+  margin-bottom: 1.5em;
+  font-size: 1em;
+  /* bold */
+  font-weight: 700;
+}
+p {
+  margin-bottom: 1em;
+}
+a {
+  color: #007EFF;  /*blue*/
+}
+a::visited {
+  color: #65B1FF;  /*light blue*/
+}
+a.btn {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #FFF; /*white*/
+  border: 1px solid #FFF; /*white*/
+  padding: 4px 15px;
+  /*animates color change over .5 seconds*/
+  transition: background-color .5s;
+}
+a.btn:hover {
+  background-color: rgba(0, 0, 0, .3); /*black*/
+}
+
+/*Header
+============================================================*/
+header {
+  height: 430px;
+  background: #CF0004
+              url(../images/banner_1200.jpg)
+              no-repeat /*doesnt repeat image to fit width*/
+              center /*puts in center of container*/
+              bottom; /*stretches to bottom of container*/
+  /* anything inside this will be position relative to this container */
+  position: relative;
+}
+header a.logo {
+  /* positions in relation to the parent element */
+  position: absolute;
+  /* stetches entire width */
+  display: block;
+  width: 160px;
+  height: 66px;
+  background: url(../images/logo.svg)
+              no-repeat
+              0 0; /*puts in upper left of container*/
+  /* sized to fit in height and width */
+  background-size: contain;
+  /* down from top element */
+  top: 15px;
+  /* left from page */
+  left: 20px;
+}
+header a.logo span {
+  display: none;
+}
+header div.hero {
+  position: absolute;
+  width: 42%;
+  top: 130px;
+  left: 55%;
+}
+header div.hero h1 {
+  line-height: 1em;
+  margin-bottom: 30px;
+  color: #FFF; /*white*/
+}
+
+/*Sections
+=========================================================*/
+/*all
+========================================================*/
+section {
+  padding: 0 30;
+}
+/*psuedo class*/
+section::after {
+  /*psuedo element*/
+  content:'';
+  /*invisible element*/
+  display: block;
+  /*makes all section elements tall enough to clear all elements with a float propery*/
+  clear: both;
+}
+/*main
+========================================================*/
+section.main {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 0;
+}
+section.main aside {
+  /*3 columns*/
+  width: 33%;
+  /*align to left*/
+  float: left;
+  /*center text*/
+  text-align: center;
+}
+section.main .content {
+  margin: 15px;
+  /*dont repeat image, x-pos, y-pos*/
+  background: no-repeat center top;
+  background-size: 75px 75px;
+  padding-top: 85px;
+}
+
+section.main aside h3 a {
+  color: #000; /*black*/
+  text-decoration: none;
+}
+section.main aside h3 a:hover {
+  text-decoration: underline;
+}
+section.main aside .content.trending {
+  /* specific file for background set in the .content above */
+  background-image: url(../images/icon_star.svg);
+}
+section.main aside .content.find-it {
+  /* specific file for background set in the .content above */
+  background-image: url(../images/icon_marker.svg);
+}
+section.main aside .content.tools {
+  /* specific file for background set in the .content above */
+  background-image: url(../images/icon_gear.svg);
+}
+/*atmospher
+=======================================================*/
+section.atmosphere {
+  background-color: #CC6633; /*orange*/
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #FFF; /*white*/
+}
+section.atmosphere article {
+  padding: 0 20px 0 515px;
+  background: url(../images/photo_lounge.jpg)
+              no-repeat
+              0 5px;
+  min-height: 220px;
+}
+/*how-to
+=========================================================*/
+section.how-to {
+  background-color: #EEE9D9;
+  position: relative;
+}
+section.how-to aside {
+  width: 30%;
+  float: left;
+  margin-right: 10px;
+}
+section.how-to aside .content {
+  padding: 30px 30px 20px 0;
+}
+section.how-to aside .content img {
+  display: block;
+  margin-bottom: 15px;
+  width: 70%;
+}
+section.how-to aside .content h4 {
+  margin-bottom: 0;
+}
+section.how-to aside .content p {
+  margin-bottom: .5em;
+}
+section.how-to aside .content a {
+  display: inline-block;
+  color: #CC6633;
+  font-weight: 700;
+}
