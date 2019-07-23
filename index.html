@@ -5,7 +5,9 @@
 		<!-- used for different sized screens-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!--links css file-->
-		<link rel="stylesheet" href="css/screen.css">
+		<link rel="stylesheet"  type="text/css" media="screen" href="css/screen.css">
+		<link rel="stylesheet"  type="text/css" media="print" href="css/print.css">
+
 		<title>My Responsive Web Design</title>
 	</head>
 	<body>
@@ -14,7 +16,7 @@
 				<a class="logo" title="Everyday Things" href="https://archeleus21.github.io/My-page/"><span>Everyday Things</span></a>
 				<div class="hero">
 					<h1>Add interest with natural textures</h1>
-					<a class="btn" title="Get advice from top designers" href="#">Get advice from top designers</a>
+					<a class="btn" title="Get advice from top designers" href="#">Get advice <span> from top designers</span></a>
 				</div>
 			</header>
 
@@ -58,6 +60,7 @@
 						<a class="btn" title="Creating a modern atsmophere" href="#">Learn more</a>
 				</article>
 			</section>
+
 			<section class="how-to">
 				<aside>
 					<div class="content">
@@ -84,7 +87,8 @@
 			<nav>
 				<ul>
 					<li>
-						<a title="About Us" href="#">About Us</a>
+						<!-- the aria-haspopup="true" is for pc's with touch screens-->
+						<a title="About Us" href="#" aria-haspopup="true">About Us</a>
 						<ul>
 							<li>
 								<a title="Sub Link 1" href="#">Sub Link 1</a>
@@ -95,7 +99,7 @@
 						</ul>
 					</li>
 					<li>
-						<a title="Design Corner" href="#">Design Corner</a>
+						<a title="Design Corner" href="#" aria-haspopup="true">Design Corner</a>
 						<ul>
 							<li>
 								<a title="Sub Link 1" href="#">Sub Link 1</a>
@@ -104,7 +108,7 @@
 								<a title="Sub Link 2" href="#">Sub Link 2</a>
 							</li>
 							<li>
-								<a title="Sub Link 3" href="#">Sub Link 3</a>
+								<a title="Sub Link 3" href="#" aria-haspopup="true">Sub Link 3</a>
 								<ul>
 									<li>
 										<a title="Sub Sub Link 1" href="#">Sub Sub Link 1</a>
@@ -117,7 +121,7 @@
 						</ul>
 					</li>
 					<li>
-						<a title="Products" href="#">Products</a>
+						<a title="Products" href="#" aria-haspopup="true">Products</a>
 						<ul>
 							<li>
 								<a title="Sub Link 1" href="#">Sub Link 1</a>

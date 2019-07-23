@@ -88,6 +88,7 @@ header {
   position: relative;
 }
 header a.logo {
+  z-index: 1;
   /* positions in relation to the parent element */
   position: absolute;
   /* stetches entire width */
@@ -177,7 +178,7 @@ section.main aside .content.tools {
   /* specific file for background set in the .content above */
   background-image: url(../images/icon_gear.svg);
 }
-/*atmospher
+/*atmosphere
 =======================================================*/
 section.atmosphere {
   background-color: #CC6633; /*orange*/
@@ -221,4 +222,438 @@ section.how-to aside .content a {
   display: inline-block;
   color: #CC6633;
   font-weight: 700;
+}
+section.how-to blockquote {
+  margin: 0;
+  width: 32%;
+  color: #444; /*dark gray*/
+  background-color: #FFF; /*white*/
+  position: absolute;
+  bottom: 0;
+  /*anchors to bottom right hand side of screen*/
+  right: 4%;
+}
+section.how-to blockquote p {
+  margin: 30px 30px 20px 50px;
+}
+section.how-to blockquote p.quote {
+  font-style: italic;
+  font-size: 1.2em;
+}
+section.how-to blockquote p.credit {
+  color: #777; /*light gray*/
+  font-size: .9em;
+  margin-top: 0;
+  padding-left: 20px;
+  line-height: 1.3em;
+  position: relative;
+}
+/*psuedo element*/
+section.how-to blockquote::before {
+  content: '\201c'; /*unicode for left double quote*/
+  color: #D2BD65; /*dark tan*/
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  font-size: 5em;
+  font-family: serif;
+}
+section.how-to blockquote p.quote::after {
+  content: '\201d'; /*unicode for right double quote*/
+  font-family: serif;
+}
+section.how-to blockquote p.credit::before {
+  content: '\2014'; /*unicode for dash*/
+  position: absolute;
+  top: -1px;
+  left: 0;
+}
+/*Navigation
+================================================================*/
+nav {
+  background-color: rgba(0, 0, 0, .65);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 50px 0 0 0;
+  width: 100%;  /*width of parent element*/
+}
+nav::after {
+  content:'';
+  display: block;
+  clear: both;
+}
+nav ul {
+  /*removes bullets*/
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a {
+  display: inline-block;
+  color: #FFF; /*white*/
+  padding: 10px 20px;
+  /*removes underlines*/
+  text-decoration: none;
+  /*width of subelements*/
+  width: 125px;
+  position: relative;
+}
+nav ul li:hover {
+  background-color: #2B0306; /*dark red*/
+}
+nav ul li:hover > ul {
+  display: block;
+}
+nav ul li a:visited {
+  color: #FFF; /*white*/
+}
+nav ul li a:hover {
+  background-color: #6D0911;
+}
+nav ul ul {
+  position: absolute;
+  top: 100%;
+  background-color: #2B0306; /*dark red*/
+  display: none;
+}
+nav ul ul li {
+  position: relative;
+}
+nav ul ul ul {
+  left: 100%;
+  top: 0;
+}
+/*Top-Level*/
+/*targets ul only if it is an imediate child*/
+nav > ul {
+  padding-left: 200px;
+}
+nav > ul > li {
+  float: left;
+}
+nav > ul > li > a {
+  width: auto;
+  padding: 10px 20px 15px 20px;
+}
+/*brackets looks for specific attributes*/
+nav a[aria-haspopup="true"]::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  /*right arrow*/
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid #FFF;
+}
+nav > ul > li > a[aria-haspopup="true"]::after {
+  /*down arrow*/
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #FFF;
+  left: 20px;
+  right: auto;
+  bottom: 6px;
+  top: auto;
+}
+/*footer
+==================================================================*/
+footer {
+  font-size: .8em;
+  margin: 40px;
+  color: #999;
+}
+footer .content {
+  /*allows element to flow across element*/
+  display: inline;
+}
+footer a {
+  margin-left: 30px;
+  color: #777;
+}
+footer a::visited {
+  color: #777;
+}
+footer a:hover {
+  color: #000; /*black*/
+}
+/*Media Queries
+======================================================*/
+@media screen and (max-width: 1000px) {
+  h1 {
+    font-size: 2.4em;
+  }
+  /*header*/
+  header div.hero {
+    left: 56%;
+  }
+  header div.hero h1 {
+    margin-bottom: 20px;
+  }
+  /*section - atmosphere*/
+  section.atmosphere article {
+    padding-left: 400px;
+    background-size: 375px auto;
+  }
+}
+@media screen and (max-width: 825px) {
+  h1 {
+    font-size: 2.2em;
+  }
+  /*header*/
+  header {
+    height: 300px;
+    background-image: url(../images/banner_825.jpg);
+  }
+  header div.hero {
+    top: 120px;
+    left: 48%;
+  }
+  /*section - atmosphere*/
+  section.atmosphere article {
+    padding-left: 325px;
+    background-size: 300px auto;
+  }
+  /*section - how to*/
+  section.how-to blockquote p.quote {
+    font-size: 1.1em;
+    line-height: 1.2em;
+  }
+  section.how-to blockquote p.credit {
+    font-size: .85em;
+  }
+}
+@media screen and (max-width: 760px) {
+  h1 {
+    font-size: 1.8em;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+  h3 {
+    font-size: 1.1em;
+  }
+  a.btn {
+    font-size: 1em;
+  }
+  /*header*/
+  header a.logo {
+    width: 145px;
+    height: 60px;
+  }
+  header div.hero {
+    top: 140px;
+    left: 48%;
+  }
+  /*section - main */
+  section.main {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  section.main aside div.content {
+    background-size: 55px 55px;
+    padding-top: 60px;
+  }
+  /*section - how-to */
+  section.how-to aside div.content img {
+    width: 85%;
+  }
+  /*Navigation */
+  nav {
+    padding-top: 80px;
+  }
+  nav > ul {
+    padding-left: 10px;
+  }
+}
+@media screen and (max-width: 625px) {
+  h1 {
+    font-size: 1em;
+  }
+  h3 {
+    margin-bottom: 0px;
+  }
+  a.btn {
+    font-size: .9em;
+  }
+  /*header */
+  header {
+    height: 160px;
+    background-image: url(../images/banner_625.jpg);
+    background-position: left top;
+  }
+  header a.logo {
+    width: 100%;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0, 0, 0, .65);
+    background-size: 112px 46px;
+    background-position: 20px center;
+  }
+  header div.hero {
+    width: 300px;
+    top: 85px;
+    left: 130px;
+  }
+  header div.hero h1 {
+    margin-bottom: 10px;
+  }
+  /*section - main */
+  section.main aside {
+    width: 100%;
+    float: none;
+    text-align: left;
+  }
+  section.main aside div.content {
+    margin: 8px 20px 8px 0px;
+    padding: 5px 0px 10px 85px;
+    background-size: 50px 50px;
+    background-position: 20px 5px;
+  }
+  /*section - atmosphere */
+  section.atmosphere article {
+    padding: 160px 20px 0px 0px;
+    background-size: 300px auto;
+    min-height: initial;
+  }
+  /*section - how-to */
+  section.how-to aside {
+    width: 100%;
+    float: none;
+    margin: 0;
+    position: relative;
+  }
+  section.how-to aside div.content {
+    padding: 20px 20px 20px 150px;
+  }
+  section.how-to aside div.content p {
+    font-size: .9em;
+  }
+  section.how-to aside div.content img {
+    display: inline-block;
+    width: 125px;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+  }
+  section.how-to blockquote {
+    margin: 0px 20px 0px 40px;
+    width: 90%;
+    padding: 1px 0px 20px 0px;
+    position: relative;
+  }
+  section.how-to blockquote p.credit {
+    margin-bottom: 0px;
+  }
+  /*Navigation */
+  nav {
+    position: static;
+    width: auto;
+    padding: 20px 15px;
+    background-color: #4B0A0C; /*dark red*/
+  }
+  nav ul,
+  nav ul ul,
+  nav ul ul ul {
+    display: block;
+    position: static;
+  }
+  nav > ul {
+    padding: 0;
+  }
+  nav > ul > li {
+    float: none;
+    margin-top: 25px;
+  }
+  nav ul li:hover {
+    background: none;
+  }
+  nav ul li a {
+    width: auto;
+    display: block;
+    margin: 8px 10px;
+    padding: 8px 15px;
+    border: 1px solid rgba(255, 255, 255, .25);
+  }
+  nav ul li a:hover {
+    background-color: rgba(255, 255, 255, .2);
+  }
+  nav ul ul {
+    background: none;
+  }
+  nav ul ul li a {
+    margin-left: 30px;
+  }
+  nav ul ul ul li a {
+    margin-left: 60px;
+  }
+  nav a[aria-haspopup="true"]::after {
+    display: none;
+  }
+  /*Footer */
+  footer div.content {
+    display: block;
+    margin-top: 15px;
+  }
+  footer div.content a {
+    margin: 0px 20px 0px 0px;
+  }
+}
+@media screen and (max-width: 425px) {
+  /*Header */
+  header {
+    height: 110px;
+    background-image: url(../images/banner_425.jpg);
+  }
+  header a.logo {
+    height: 36px;
+    background: rgba(0, 0, 0, .65) url(../images/logo_small.svg) no-repeat center;
+    background-size: 126px 17px;
+  }
+  header div.hero {
+    width: 100%;
+    left: 0px;
+    top: 46px;
+    text-align: center;
+  }
+  header div.hero h1 {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+  header div.hero a.btn {
+    padding: 2px 30px;
+    font-size: .8em;
+  }
+  header div.hero a.btn span {
+    display: none;
+  }
+  /*Section - how-to */
+  section.how-to aside div.content {
+    padding: 140px 20px 20px 0px;
+  }
+  section.how-to aside div.content img {
+    width: auto;
+    height: 100px;
+    top: 30px;
+  }
+  section.how-to blockquote {
+    margin: 10px 40px 0px 20px;
+  }
+  /*footer */
+  foot::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  footer div.content a {
+    display: inline-block;
+    margin: 0px 0px 10px 0px;
+    float: left;
+    clear: both;
+  }
 }
