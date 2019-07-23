@@ -7,6 +7,9 @@
 		<!--links css file-->
 		<link rel="stylesheet"  type="text/css" media="screen" href="css/screen.css">
 		<link rel="stylesheet"  type="text/css" media="print" href="css/print.css">
+		<!-- since we are using jquery it needs to be included first before the JavaScript file-->
+		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="js/design.js"></script>
 
 		<title>My Responsive Web Design</title>
 	</head>
@@ -18,8 +21,64 @@
 					<h1>Add interest with natural textures</h1>
 					<a class="btn" title="Get advice from top designers" href="#">Get advice <span> from top designers</span></a>
 				</div>
+				<!--Navigation
+				==================================================================================-->
+				<nav>
+					<a class="mobile-menu" title="Menu" href="#"></a>
+					<ul>
+						<li>
+							<!-- the aria-haspopup="true" is for pc's with touch screens-->
+							<a title="About Us" href="#" aria-haspopup="true">About Us</a>
+							<ul>
+								<li>
+									<a title="Sub Link 1" href="#">Sub Link 1</a>
+								</li>
+								<li>
+									<a title="Sub Link 2" href="#">Sub Link 2</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a title="Design Corner" href="#" aria-haspopup="true">Design Corner</a>
+							<ul>
+								<li>
+									<a title="Sub Link 1" href="#">Sub Link 1</a>
+								</li>
+								<li>
+									<a title="Sub Link 2" href="#">Sub Link 2</a>
+								</li>
+								<li>
+									<a title="Sub Link 3" href="#" aria-haspopup="true">Sub Link 3</a>
+									<ul>
+										<li>
+											<a title="Sub Sub Link 1" href="#">Sub Sub Link 1</a>
+										</li>
+										<li>
+											<a title="Sub Sub Link 2" href="#">Sub Sub Link 2</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a title="Products" href="#" aria-haspopup="true">Products</a>
+							<ul>
+								<li>
+									<a title="Sub Link 1" href="#">Sub Link 1</a>
+								</li>
+								<li>
+									<a title="Sub Link 2" href="#">Sub Link 2</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a title="Contact Us" href="#">Contact Us</a>
+						</li>
+					</ul>
+				</nav>
 			</header>
-
+<!--Main
+==============================================================================-->
 			<section class="main">
 				<aside>
 					<div class="content trending">
@@ -30,7 +89,8 @@
 							non turpis.</p>
 					</div>
 				</aside>
-
+				<!--find it
+				==============================================================================-->
 				<aside>
 					<div class="content find-it">
 						<h3><a href="#">Where to find it</a></h3>
@@ -39,7 +99,8 @@
 							ipsum dolor sit amet, consect.</p>
 					</div>
 				</aside>
-
+				<!--tools
+				==============================================================================-->
 				<aside>
 					<div class="content tools">
 						<h3><a href="#">Tools of the trade</a></h3>
@@ -49,7 +110,8 @@
 					</div>
 				</aside>
 			</section>
-
+			<!--atmosphere
+			==============================================================================-->
 			<section class="atmosphere">
 				<article>
 					<h2>Creating a modern atmosphere</h2>
@@ -60,7 +122,8 @@
 						<a class="btn" title="Creating a modern atsmophere" href="#">Learn more</a>
 				</article>
 			</section>
-
+			<!--How to
+			==============================================================================-->
 			<section class="how-to">
 				<aside>
 					<div class="content">
@@ -84,59 +147,8 @@
 				</blockquote>
 			</section>
 
-			<nav>
-				<ul>
-					<li>
-						<!-- the aria-haspopup="true" is for pc's with touch screens-->
-						<a title="About Us" href="#" aria-haspopup="true">About Us</a>
-						<ul>
-							<li>
-								<a title="Sub Link 1" href="#">Sub Link 1</a>
-							</li>
-							<li>
-								<a title="Sub Link 2" href="#">Sub Link 2</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a title="Design Corner" href="#" aria-haspopup="true">Design Corner</a>
-						<ul>
-							<li>
-								<a title="Sub Link 1" href="#">Sub Link 1</a>
-							</li>
-							<li>
-								<a title="Sub Link 2" href="#">Sub Link 2</a>
-							</li>
-							<li>
-								<a title="Sub Link 3" href="#" aria-haspopup="true">Sub Link 3</a>
-								<ul>
-									<li>
-										<a title="Sub Sub Link 1" href="#">Sub Sub Link 1</a>
-									</li>
-									<li>
-										<a title="Sub Sub Link 2" href="#">Sub Sub Link 2</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a title="Products" href="#" aria-haspopup="true">Products</a>
-						<ul>
-							<li>
-								<a title="Sub Link 1" href="#">Sub Link 1</a>
-							</li>
-							<li>
-								<a title="Sub Link 2" href="#">Sub Link 2</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a title="Contact Us" href="#">Contact Us</a>
-					</li>
-				</ul>
-			</nav>
-
+			<!--Footer
+			==============================================================================-->
 			<footer>
 				&copy; Everyday Things
 				<div class="content">
@@ -144,9 +156,6 @@
 					<a title="Terms of Service" href="#">Terms of Service</a>
 				</div>
 			</footer>
-
 		</div>
-
-
 	</body>
 </html>
